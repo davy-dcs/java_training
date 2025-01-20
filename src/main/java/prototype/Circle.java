@@ -1,4 +1,4 @@
-package prototype;
+package main.java.prototype;
 
 import java.util.Objects;
 

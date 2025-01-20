@@ -1,6 +1,11 @@
-import prototype.Circle;
-import prototype.Rectangle;
-import prototype.Shape;
+package main.java;
+
+import main.java.monteur.Director;
+import main.java.monteur.Pizza;
+import main.java.monteur.PizzaBuilder;
+import main.java.prototype.Circle;
+import main.java.prototype.Rectangle;
+import main.java.prototype.Shape;
 import singleton.Singleton;
 
 import java.util.ArrayList;
@@ -54,5 +59,26 @@ public class Main {
                 System.out.println(i + ": L'object d'origine et son clone sont le même objet.");
             }
         }
+
+        // Monteur
+        Director pizzaiolo = new Director();
+        PizzaBuilder pizzaBuilder = new PizzaBuilder();
+
+        pizzaiolo.bigCreamComplet(pizzaBuilder);
+        Pizza pizza1 = pizzaBuilder.getResult();
+
+        pizzaiolo.bigTomatoComplet(pizzaBuilder);
+        Pizza pizza2 = pizzaBuilder.getResult();
+
+        pizzaiolo.smallCreamComplet(pizzaBuilder);
+        Pizza pizza3 = pizzaBuilder.getResult();
+
+        pizzaiolo.smallTomatoComplet(pizzaBuilder);
+        Pizza pizza4 = pizzaBuilder.getResult();
+
+        System.out.println(pizza1);
+        System.out.println(pizza2);
+        System.out.println(pizza3);
+        System.out.println(pizza4);
     }
 }
